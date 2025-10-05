@@ -148,22 +148,14 @@ var createScene = function () {
             "uPointLightColor", "uPointLightPos"
         ]
     });
-
-    // ADJUST LIGHT AND MATERIAL PROPERTIES HERE
-    // MaterialS// Revert everything except the last two (light params)
     shaderMat.setFloat("uMatAmbient", 0.15);
     shaderMat.setColor3("uMatDiffuse",  new BABYLON.Color3(0.80, 0.20, 0.20));
     shaderMat.setColor3("uMatSpecular", new BABYLON.Color3(1.0, 1.0, 1.0));
     shaderMat.setFloat("uMatShininess", 32.0);
 
-    // Adjust ONLY the last two components:
-    // Option A – warm key, moved left & closer
+    // Adjust the following components
     shaderMat.setColor3("uPointLightColor", new BABYLON.Color3(1.05, 0.92, 0.82));
     shaderMat.setVector3("uPointLightPos",  new BABYLON.Vector3(-1.5, 1.5, 1.0));
-
-// (or) Option B – cool key, above-right
-// shaderMat.setColor3("uPointLightColor", new BABYLON.Color3(0.85, 0.95, 1.10));
-// shaderMat.setVector3("uPointLightPos",  new BABYLON.Vector3(1.8, 3.0, -0.8));
 
 
     // Update camera position every frame
